@@ -2,6 +2,8 @@ package com.example.alex.stockquotes_smith;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -9,14 +11,16 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editText;
 
+    private Button findButton;
+
+    private Task task;
+
     private TextView displaySymbol;
     private TextView displayName;
     private TextView displayLastTradePrice;
-
-
-
-
-    private Stock stock;
+    private TextView displayLastTradeTime;
+    private TextView displayChange;
+    private TextView displayWeekRange;
 
 
     @Override
@@ -27,29 +31,23 @@ public class MainActivity extends AppCompatActivity {
         displaySymbol = findViewById(R.id.displaySymbol);
         displayName = findViewById(R.id.displayName);
         displayLastTradePrice = findViewById(R.id.displayLastTradePrice);
+        displayLastTradeTime = findViewById(R.id.displayLastTradeTime);
+        displayChange = findViewById(R.id.displayChange);
+        displayWeekRange = findViewById(R.id.displayWeekRange);
 
-        //gets symbol
+        findButton = findViewById(R.id.findButton);
         editText = findViewById(R.id.editText);
 
-        //create stock object with new symbol
-        //stock = new Stock(editText.toString());
 
-        stock = new Stock("goog");
-        try {
-            stock.load();
+        task = new Task(displaySymbol,displayName,displayLastTradePrice,displayLastTradeTime,displayChange,displayWeekRange);
 
-        }
-        catch (Exception e)
+
+        findButton.setOnClickListener(new View.OnClickListener()
         {
-            System.out.println(e);
-        }
-
-        displaySymbol.setText(stock.getSymbol().toString());
-        //displayName.setText(stock.getName().toString());
-        //displayLastTradePrice.setText(stock.getLastTradePrice().toString());
-
-
-
-
+            public void onClick(View v)
+            {
+                task.execute(editText.getText().toString());
+            }
+        });
     }
 }
