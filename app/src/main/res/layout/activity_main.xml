@@ -8,19 +8,31 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="141dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="@dimen/edit_width"
+        android:layout_height="@dimen/edit_height"
+        android:layout_marginStart="@dimen/edit_start"
+        android:layout_marginTop="@dimen/edit_top"
+        android:hint="@string/edit_text"
         android:inputType="text"
-        android:text="Enter Symbol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/findButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/button_bottom"
+        android:layout_marginStart="@dimen/button_start"
+        android:text="@string/button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
-        android:layout_width="169dp"
-        android:layout_height="126dp"
-        android:layout_marginBottom="272dp"
+        android:layout_width="@dimen/layoutT_width"
+        android:layout_height="@dimen/layoutT_height"
+        android:layout_marginBottom="@dimen/layoutT_marginBottom"
         android:layout_marginRight="196dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -142,17 +154,5 @@
             app:layout_constraintVertical_bias="0.355"
             tools:layout_editor_absoluteX="76dp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/findButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="412dp"
-        android:layout_marginStart="208dp"
-        android:text="Find"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

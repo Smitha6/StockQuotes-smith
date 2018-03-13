@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
 
 
-        task = new Task(displaySymbol,displayName,displayLastTradePrice,displayLastTradeTime,displayChange,displayWeekRange);
+        task = new Task(displaySymbol,displayName,displayLastTradePrice,displayLastTradeTime,displayChange,displayWeekRange,this);
 
 
         findButton.setOnClickListener(new View.OnClickListener()

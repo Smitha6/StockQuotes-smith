@@ -1,7 +1,9 @@
 package com.example.alex.stockquotes_smith;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +22,15 @@ public class Task extends AsyncTask<String, Void, ArrayList<String>>
     private TextView displayChange;
     private TextView displayWeekRange;
 
+    private Context context;
+
     public Task (TextView displaySymbol,
                  TextView displayName,
                  TextView displayLastTradePrice,
                  TextView displayLastTradeTime,
                  TextView displayChange,
-                 TextView displayWeekRange)
+                 TextView displayWeekRange,
+                 Context context)
     {
         this.displaySymbol = displaySymbol;
         this.displayName = displayName;
@@ -33,6 +38,8 @@ public class Task extends AsyncTask<String, Void, ArrayList<String>>
         this.displayLastTradeTime = displayLastTradeTime;
         this.displayChange = displayChange;
         this.displayWeekRange = displayWeekRange;
+
+        this.context = context;
     }
 
     @Override
@@ -54,8 +61,9 @@ public class Task extends AsyncTask<String, Void, ArrayList<String>>
             stock.load();
         }
         catch (Exception e) {
-            System.out.println(e);
+            onProgressUpdate();
         }
+
         arrayList.add(0, stock.getSymbol());
         arrayList.add(1,stock.getName());
         arrayList.add(2,stock.getLastTradePrice());
@@ -72,6 +80,7 @@ public class Task extends AsyncTask<String, Void, ArrayList<String>>
     protected void onPostExecute(ArrayList<String> arr) {
         super.onPostExecute(arr);
 
+
         try {
             displaySymbol.setText(arr.get(0));
             displayName.setText(arr.get(1));
@@ -84,4 +93,11 @@ public class Task extends AsyncTask<String, Void, ArrayList<String>>
             System.out.println(e);
         }
     }
+
+    @Override
+    protected void onProgressUpdate(Void ... voids) {
+        Toast.makeText(context, "Stock Quote Not Found",
+                Toast.LENGTH_LONG).show();
+    }
+
 }
