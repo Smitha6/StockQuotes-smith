@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="edit_width">150dp</dimen>
-    <dimen name="edit_height">50dp</dimen>
-    <dimen name="edit_start">56dp</dimen>
-    <dimen name="edit_top">40dp</dimen>
+    <dimen name="edit_width">250dp</dimen>
+    <dimen name="edit_height">150dp</dimen>
+    <dimen name="edit_start">66dp</dimen>
+    <dimen name="edit_top">140dp</dimen>
 
-    <dimen name="button_bottom">420dp</dimen>
-    <dimen name="button_start">208dp</dimen>
+    <dimen name="button_bottom">436dp</dimen>
+    <dimen name="button_start">216dp</dimen>
 
     <dimen name="layoutT_width">169dp</dimen>
     <dimen name="layoutT_height">126dp</dimen>
