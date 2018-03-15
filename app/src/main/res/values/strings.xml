@@ -3,4 +3,8 @@
     <string name="edit_text">Enter Symbol</string>
     <string name="button_text">Find</string>
 
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
 </resources>

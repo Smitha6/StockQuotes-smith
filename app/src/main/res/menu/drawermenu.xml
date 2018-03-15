@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/db" android:title="dashboard" />
-    <item android:id="@+id/test1" android:title="Test 1" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/goog" android:title="GOOG" android:onClick="clickGoog" />
+
+
 
 </menu>
